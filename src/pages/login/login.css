@@ -4,16 +4,11 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(
-      rgba(255, 255, 255, 0.5),
-      rgba(255, 255, 255, 0.5)
-    ),
-    url("https://images.pexels.com/photos/768473/pexels-photo-768473.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500");
-  background-size: cover;
 }
 
 .loginTitle {
-  font-size: 50px;
+  font-size: 30px;
+  font-weight: bold;
 }
 
 .loginForm {
@@ -27,18 +22,18 @@
 }
 
 .loginInput {
+  border: 1px solid grey;
   padding: 10px;
   background-color: white;
-  border: none;
 }
 
 .loginButton {
   margin-top: 20px;
   cursor: pointer;
-  background-color: lightcoral;
+  background-color: rgb(128, 0, 0);
   border: none;
   color: white;
-  border-radius: 10px;
+  border-radius: 5px;
   padding: 10px;
 }
 

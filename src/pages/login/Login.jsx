@@ -1,6 +1,5 @@
 import axios from "axios";
 import { useContext, useRef } from "react";
-import { Link } from "react-router-dom";
 import { Context } from "../../context/Context";
 import "./login.css";
 
@@ -13,7 +12,7 @@ export default function Login() {
     e.preventDefault();
     dispatch({ type: "LOGIN_START" });
     try {
-      const res = await axios.post("/auth/login", {
+      const res = await axios.post("http://localhost:5000/api/auth/login", {
         username: userRef.current.value,
         password: passwordRef.current.value,
       });
@@ -25,31 +24,26 @@ export default function Login() {
 
   return (
     <div className="login">
-      <span className="loginTitle">Login</span>
+      <span className="loginTitle">LOGIN</span>
       <form className="loginForm" onSubmit={handleSubmit}>
         <label>Username</label>
         <input
           type="text"
           className="loginInput"
-          placeholder="Enter your username..."
+          placeholder="Enter Your Username"
           ref={userRef}
         />
         <label>Password</label>
         <input
           type="password"
           className="loginInput"
-          placeholder="Enter your password..."
+          placeholder="Enter Your Password"
           ref={passwordRef}
         />
         <button className="loginButton" type="submit" disabled={isFetching}>
           Login
         </button>
       </form>
-      <button className="loginRegisterButton">
-        <Link className="link" to="/register">
-          Register
-        </Link>
-      </button>
     </div>
   );
 }

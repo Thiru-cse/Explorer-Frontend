@@ -8,18 +8,25 @@
   align-items: center;
   font-family: "Josefin Sans", sans-serif;
   z-index: 999;
+  border: 0.1px solid rgb(214, 214, 214);
 }
 
-.topLeft,
+
 .topRight {
-  flex: 3;
+  flex: 30%;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: end;
 }
 
 .topCenter {
-  flex: 6;
+  flex: 50%;
+  display: flex;
+  justify-content: end;
+}
+
+.link{
+  text-decoration: none;
 }
 
 .topIcon {
