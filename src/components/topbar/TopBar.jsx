@@ -7,7 +7,6 @@ import "./topbar.css";
 
 export default function TopBar() {
   const { user, dispatch } = useContext(Context);
-  const PF = "http://localhost:5000/images/"
 
   const handleLogout = () => {
     dispatch({ type: "LOGOUT" });
@@ -36,7 +35,7 @@ export default function TopBar() {
       <div className="topRight">
         {user ? (
           <Link to="/settings">
-            <RiListSettingsFill />
+            <RiListSettingsFill size={25} />
           </Link>
         ) : (
           <ul className="topList">

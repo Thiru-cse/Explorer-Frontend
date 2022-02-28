@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import "./write.css";
 import axios from "axios";
+import { BiImageAdd } from 'react-icons/bi';
 import { Context } from "../../context/Context";
 
 export default function Write() {
@@ -23,11 +24,11 @@ export default function Write() {
       data.append("file", file);
       newPost.photo = filename;
       try {
-        await axios.post("http://localhost:5000/api/upload", data);
+        await axios.post("https://explorer-thiru.herokuapp.com/api/upload", data);
       } catch (err) {}
     }
     try {
-      const res = await axios.post("http://localhost:5000/api/posts", newPost);
+      const res = await axios.post("https://explorer-thiru.herokuapp.com/api/posts", newPost);
       window.location.replace("/post/" + res.data._id);
     } catch (err) {}
   };
@@ -39,7 +40,7 @@ export default function Write() {
       <form className="writeForm" onSubmit={handleSubmit}>
         <div className="writeFormGroup">
           <label htmlFor="fileInput">
-            <i className="writeIcon fas fa-plus"></i>
+            <BiImageAdd size={25} style={{ cursor: "pointer" }} />
           </label>
           <input
             type="file"

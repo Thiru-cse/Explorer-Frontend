@@ -4,13 +4,14 @@ import "./home.css";
 import axios from "axios";
 import { useLocation } from "react-router";
 
+
 export default function Home() {
   const [posts, setPosts] = useState([]);
   const { search } = useLocation();
 
   useEffect(() => {
     const fetchPosts = async () => {
-      const res = await axios.get("http://localhost:5000/api/posts" + search);
+      const res = await axios.get("https://explorer-thiru.herokuapp.com/api/posts" + search);
       setPosts(res.data);
     };
     fetchPosts();

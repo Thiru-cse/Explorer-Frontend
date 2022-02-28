@@ -7,6 +7,10 @@ export default function Post({ post }) {
     <div className="post">
       {post.photo && <img className="postImg" src={PF + post.photo} alt="" />}
       <div className="postInfo">
+      <span className="singlePostAuthor">
+            Author:
+              <b> {post.username}</b>
+          </span>
         <div className="postCats">
           {post.categories.map((c) => (
             <span className="postCat">{c.name}</span>
